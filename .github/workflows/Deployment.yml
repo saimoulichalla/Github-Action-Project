@@ -1,4 +1,4 @@
-name: Test workflow
+name: Deployment workflow
 on: push
 jobs:
   Testjob:
@@ -18,6 +18,6 @@ jobs:
       - name: Install the packages
         run: npm ci
       - name: Build the code
-        run: npm run Build
+        run: npm run build
       - name: Deploy the code
         run: echo "Deploying ..."   

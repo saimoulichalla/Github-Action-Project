@@ -1,5 +1,5 @@
 name: Deployment workflow
-on: push
+on: [push, workflow_dispatch] # making this job to run automatically, also manually
 jobs:
   Testjob:
     runs-on: ubuntu-latest
@@ -11,6 +11,7 @@ jobs:
       - name: Test the code
         run: npm run test 
   DeployJob:
+    needs: Testjob  #Making this job to run after the Testjob completes successfully
     runs-on: ubuntu-latest
     steps:
       - name: Get the code

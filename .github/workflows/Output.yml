@@ -2,7 +2,7 @@ name: Output Information
 on: workflow_dispatch
 jobs:
   info:
-  runs-on: ubuntu-latest
-  steps:
-    - name: Output github context
-      run: echo "${{toJSON(github)}}"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output github context
+        run: echo "${{ toJSON(github) }}"
